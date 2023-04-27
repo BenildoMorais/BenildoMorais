@@ -73,12 +73,15 @@ public class Notes extends AppCompatActivity {
             Boolean estado = binding.ativo.isChecked();
             String data = binding.data.getText().toString();
 
-            Notas controle = new Notas(titulo, descricao, estado, data);
+            if (titulo.equalsIgnoreCase("") || titulo == null || descricao.equalsIgnoreCase("") || data.equalsIgnoreCase("")) {
+                Toast.makeText(this, "Preencha Todos os campos", Toast.LENGTH_SHORT).show();
+            }else {
+                Notas controle = new Notas(titulo, descricao, estado, data);
 
-            Toast.makeText(this, "Está Activo", Toast.LENGTH_SHORT).show();
-            lista.add(controle);
+                lista.add(controle);
 
-            Toast.makeText(this, "Gravado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Gravado", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

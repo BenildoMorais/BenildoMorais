@@ -14,7 +14,7 @@ import mz.ac.isutc.lecc.mt2.benildomorais.databinding.ActivityNotasListBinding;
 
 public class NotasList extends AppCompatActivity {
 
-    private ArrayList lista;
+    private ArrayList<Notas> lista;
     private ActivityNotasListBinding binding;
 
     @Override
@@ -33,6 +33,9 @@ public class NotasList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+                Intent intent = new Intent(NotasList.this, DetalhesNota.class);
+                intent.putExtra("keyNota",lista.get(i));
+                startActivity(intent);
             }
         });
 

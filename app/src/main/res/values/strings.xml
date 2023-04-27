@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BenildoMorais</string>
+
+    <string-array name="Gateway">
+        <item>Abrir Website</item>
+        <item>Efectuar Ligação</item>
+        <item>Abrir Maps</item>
+        <item>Abrir Camera</item>
+    </string-array>
 </resources>
