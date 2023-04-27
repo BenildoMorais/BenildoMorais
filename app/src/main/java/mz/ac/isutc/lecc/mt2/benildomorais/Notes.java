@@ -1,5 +1,6 @@
 package mz.ac.isutc.lecc.mt2.benildomorais;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -34,7 +35,7 @@ public class Notes extends AppCompatActivity {
                 }else {
                     Intent intent = new Intent(Notes.this, NotasList.class);
                     intent.putParcelableArrayListExtra("keylista", lista);
-                    startActivity(intent);
+                    startActivityForResult(intent, 1);
                 }
             }
         });
@@ -48,21 +49,36 @@ public class Notes extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1) {
+            try {
+            lista = data.getParcelableArrayListExtra("keyArray");
+            }catch (NullPointerException e){
+                lista = this.lista;
+            }
+        }
+    }
 
     private void gravar(){
-        String titulo = binding.titulo.getText().toString();
-        String descricao = binding.descricao.getText().toString();
-        String estado = binding.ativo.getText().toString();
-        String data = binding.data.getText().toString();
 
-        Notas controle = new Notas(titulo, descricao, estado, data);
+        if (binding.naoAtivo.isChecked()) {
+            Toast.makeText(this, "Nao foi gravado poois nao está ativo", Toast.LENGTH_SHORT).show();
+        }else {
 
-        if (estado.equalsIgnoreCase("sim")) {
+            String titulo = binding.titulo.getText().toString();
+            String descricao = binding.descricao.getText().toString();
+            Boolean estado = binding.ativo.isChecked();
+            String data = binding.data.getText().toString();
+
+            Notas controle = new Notas(titulo, descricao, estado, data);
+
             Toast.makeText(this, "Está Activo", Toast.LENGTH_SHORT).show();
             lista.add(controle);
+
+            Toast.makeText(this, "Gravado", Toast.LENGTH_SHORT).show();
         }
-
-
-        Toast.makeText(this, "Gravado", Toast.LENGTH_SHORT).show();
     }
 }

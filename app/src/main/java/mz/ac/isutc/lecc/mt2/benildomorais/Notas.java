@@ -10,10 +10,10 @@ public class Notas implements Parcelable {
 
     private String titulo;
     private String descrição;
-    private String estado;
+    private Boolean estado;
     private String data;
 
-    public Notas(String titulo, String descrição, String estado, String data){
+    public Notas(String titulo, String descrição, Boolean estado, String data){
         this.titulo = titulo;
         this.descrição = descrição;
         this.estado = estado;
@@ -23,7 +23,8 @@ public class Notas implements Parcelable {
     protected Notas(Parcel in) {
         titulo = in.readString();
         descrição = in.readString();
-        estado = in.readString();
+        byte tmpEstado = in.readByte();
+        estado = tmpEstado == 0 ? null : tmpEstado == 1;
         data = in.readString();
     }
 
@@ -39,10 +40,20 @@ public class Notas implements Parcelable {
         }
     };
 
-    @NonNull
-    @Override
-    public String toString() {
-        return this.titulo;
+    public String getData() {
+        return data;
+    }
+
+    public String getDescrição() {
+        return descrição;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public String getTitulo() {
+        return titulo;
     }
 
     @Override
@@ -54,7 +65,13 @@ public class Notas implements Parcelable {
     public void writeToParcel(@NonNull Parcel parcel, int i) {
         parcel.writeString(titulo);
         parcel.writeString(descrição);
-        parcel.writeString(estado);
+        parcel.writeByte((byte) (estado == null ? 0 : estado ? 1 : 2));
         parcel.writeString(data);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return this.titulo;
     }
 }
