@@ -23,7 +23,7 @@ public class DetalhesNota extends AppCompatActivity {
 
         binding.descricao.setText("Descrição: "+notas.getDescrição());
 
-        binding.estado.setText("Estado: "+notas.getEstado().toString());
+        binding.estado.setText("Activação: "+notas.getEstado().toString());
 
         binding.data.setText("Data: "+notas.getData());
     }

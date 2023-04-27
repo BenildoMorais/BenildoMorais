@@ -66,9 +66,13 @@ public class IntentsGateway extends AppCompatActivity {
         int numero =-1;
 
         if (binding.texto.getText().toString().equalsIgnoreCase("") == false){
+            try{
             numero =  Integer.parseInt(binding.texto.getText().toString());
             Intent intent = new Intent( Intent.ACTION_DIAL, Uri.parse("tel:"+numero));
             startActivity(intent);
+            }catch (NumberFormatException e){
+                Toast.makeText(this, "Insira um numero de telefone", Toast.LENGTH_SHORT).show();
+            }
         }else{
             aletra();
         }

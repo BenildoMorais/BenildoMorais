@@ -19,28 +19,21 @@
         android:id="@+id/descricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24px"
+        android:textSize="32dp"
         />
 
     <TextView
         android:id="@+id/estado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24px"
+        android:textSize="32dp"
         />
-
-<!--    <TextView-->
-<!--        android:id="@+id/detalhes"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="24px"-->
-<!--        />-->
 
     <TextView
         android:id="@+id/data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24px"
+        android:textSize="32dp"
         />
 
 </LinearLayout>
