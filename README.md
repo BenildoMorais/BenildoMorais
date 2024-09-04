@@ -1,4 +1,4 @@
-## I think you've found what you're looking for👋
+## I think you've found what you're looking for 📍⚡
 
 <div align="center">
   <a href="https://github.com/BenildoMorais">
