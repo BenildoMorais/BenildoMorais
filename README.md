@@ -1,10 +1,9 @@
-## Hi there 👋
+## I think you've found what you're looking for👋
 
 <div align="center">
   <a href="https://github.com/BenildoMorais">
  <!-- <img height="180em" src="https://github-readme-stats.vercel.app/api?username=BenildoMorais&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>-->
   <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=BenildoMorais&theme=dracula"/>
-  <img height="180em" src="https://novatorem.visualbean.vercel.app/api/spotify"/>
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=BenildoMorais&layout=compact&langs_count=7&theme=dracula"/>
 </div>
 
